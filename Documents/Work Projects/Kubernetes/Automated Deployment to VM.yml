@@ -1,9 +1,9 @@
 name: Automated Deployment to VM
 
-# Trigger this pipeline on every push to the main branch
+# Trigger this pipeline on every push to the myBranch branch
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "myBranch" ]
 
 jobs:
   build-and-deploy:
