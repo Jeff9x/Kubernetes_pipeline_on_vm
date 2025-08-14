@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # The name of your deployment
+  name: my-app-deployment
+spec:
+  # The number of pods you want to run
+  replicas: 2
+  selector:
+    matchLabels:
+      # This label is used by the Service to find these pods
+      app: my-app
+  template:
+    metadata:
+      labels:
+        # The label applied to each pod
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        # IMPORTANT: Replace this with your actual image from Docker Hub
+        image: jeffare9x/my-app:latest
+        ports:
+        # The port your application listens on inside the container
+        - containerPort: 8080
